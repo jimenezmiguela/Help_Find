@@ -54,8 +54,7 @@ function handle_ajax(event)
 
   const updateRace = document.getElementById('update_race');
 
-  const updateAge = document.
-  getElementById('update_age');
+  const updateAge = document.getElementById('update_age');
 
   const updateHairColor = document.getElementById('update_hair_color');
 

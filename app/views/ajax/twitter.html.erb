@@ -5,11 +5,17 @@
 <br>
 
 <div id='crud_operations_div'>
+  <div class="field">
+    <b><label for="twitter_api_word">Choose a Search Option :</label></b>
 
-  <b><label>Valid options:  all, id, text </label></b>
-  <input id="twitter_api_word">
-
-  <br>
+      <select name="twitter_api_word" id="twitter_api_word">
+        <option value="">--Please choose an option--</option>
+        <option value="all">All</option>
+        <option value="id">Id</option>
+        <option value="text">Text</option>
+      </select>
+    
+  </div>
 
   <button id="twitter_api_button" type="button">Twitter results</button>
 

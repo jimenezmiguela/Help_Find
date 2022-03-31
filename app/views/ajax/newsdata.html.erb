@@ -6,10 +6,17 @@
 <br>
 
 <div id='crud_operations_div'>
-  <b><label>Valid options:  all, title, link, description</label></b>
-  <input id="newsdata_api_word">
+  <div class="field">
+  <b><label for="newsdata_api_word">Choose a Search Option :</label></b>
 
-  <br>
+    <select name="newsdata_api_word" id="newsdata_api_word">
+      <option value="">--Please choose an option--</option>
+      <option value="all">All</option>
+      <option value="title">Title</option>
+      <option value="link">Link</option>
+      <option value="description">Description</option>
+    </select>
+  </div>
 
   <button id="newsdata_api_button" type="button">Newsdata Results</button>
 
