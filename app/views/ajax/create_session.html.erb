@@ -14,7 +14,21 @@
   <br>
 
   <label>User Password</label>
-  <input id="create_user_password">
+  <br>
+  <!-- Create User Session: Toggle Password Visibility -->
+  <input type="password" id="create_user_password"><br><br>
+  <input type="checkbox" onclick="create_user_password_function()">Show Password
+
+  <script>
+  function create_user_password_function() {
+    var x = document.getElementById("create_user_password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+  </script>
 
   <br>
   <br>
