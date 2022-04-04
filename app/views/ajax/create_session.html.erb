@@ -14,6 +14,20 @@
   <br>
 
   <label>User Password</label>
+  <!-- Create User Session: Toggle Password Visibility -->
+  <input type="password" name="password" autocomplete="current-password" required="" id="create_user_password">
+  <i class="far fa-eye" id="togglePassword" onclick="create_user_password_function()" style="margin-left: -30px; cursor: pointer;"></i>
+
+  <script>
+    function create_user_password_function() {
+      var x = document.getElementById("create_user_password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+
   <br>
   <!-- Create User Session: Toggle Password Visibility -->
   <input type="password" id="create_user_password"><br><br>
@@ -28,6 +42,7 @@
       x.type = "password";
     }
   }
+
   </script>
 
   <br>
@@ -39,54 +54,54 @@
 
   <!-- <b><p>Create User Status:</p></b> -->
   <div id="create_user_results_div">
+    <br>
+
+  </div>
+
   <br>
 
-</div>
-
-<br>
-
-<b>
-<%= link_to 'Logon', 'logon_session' %>
- <br>
-<%= link_to 'Logoff', 'logoff_session' %>
-</b>
-<br>
-<br>
-<br>
-<br>
+  <b>
+    <%= link_to 'Logon', 'logon_session' %>
+    <br>
+    <%= link_to 'Logoff', 'logoff_session' %>
+  </b>
+  <br>
+  <br>
+  <br>
+  <br>
 
 
-<%= link_to 'Home', '/ajax/home' %>
+  <%= link_to 'Home', '/ajax/home' %>
 
-<br>
+  <br>
 
-<%= link_to 'Search FBI', 'fbi' %>
+  <%= link_to 'Search FBI', 'fbi' %>
 
-<br>
+  <br>
 
-<%= link_to 'Search Twitter', 'twitter' %>
+  <%= link_to 'Search Twitter', 'twitter' %>
 
-<br>
+  <br>
 
-<%= link_to 'Search Newsdata', 'newsdata' %>
+  <%= link_to 'Search Newsdata', 'newsdata' %>
 
-<br>
+  <br>
 
-<%= link_to 'Missing Files', 'missing_read' %>
+  <%= link_to 'Missing Files', 'missing_read' %>
 
-<br>
+  <br>
 
-<%= link_to 'Status Reports', 'status_reports_read' %>
+  <%= link_to 'Status Reports', 'status_reports_read' %>
 
-<br>
+  <br>
 
-<%= link_to 'Login/Logoff', 'session' %>
+  <%= link_to 'Login/Logoff', 'session' %>
 
-<br>
+  <br>
 
-<%= link_to 'About', 'about' %>
+  <%= link_to 'About', 'about' %>
 
-<br>
+  <br>
 
 
-<%= javascript_pack_tag 'session_operations' %>
+  <%= javascript_pack_tag 'session_operations' %>
