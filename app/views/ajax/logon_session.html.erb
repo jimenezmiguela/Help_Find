@@ -1,43 +1,32 @@
 <h2>Help Find API User Session</h2>
-
 <br>
-
-
 <div id="session_rest_operations_div">
-
   <!-- Help Find API User Logon -->
   <b><p>User Logon</p></b>
   <label>User Email</label>
   <input id="user_log_on_email">
-
   <br>
-
   <label>User Password</label>
   <!-- Logon User Session: Toggle Password Visibility -->
   <input type="password" name="password" autocomplete="current-password" required="" id="user_log_on_password">
   <i class="far fa-eye" id="togglePassword" onclick="logon_user_password_function()" style="margin-left: -30px; cursor: pointer;"></i>
-
   <script>
-  function logon_user_password_function() {
-    var x = document.getElementById("user_log_on_password");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
+    function logon_user_password_function() {
+      var x = document.getElementById("user_log_on_password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
     }
-  }
   </script>
-
   <br>
   <br>
-
   <button id="user_logon_button" type="button" a href="#" class="button">Logon</button>
   <br>
   <br>
-
   <!-- <b><p>Logon Status:</p></b> -->
   <div id="logon_results_div">
-
   </div>
   <b>
     <br>
@@ -53,7 +42,7 @@
 
   <%= link_to 'Home', '/ajax/home' %>
 
-  <br>
+  <
 
   <%= link_to 'Search FBI', 'fbi' %>
 

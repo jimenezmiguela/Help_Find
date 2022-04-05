@@ -1,23 +1,15 @@
 <h2>Help Find API User Session</h2>
-
 <br>
-
-
 <div id="session_rest_operations_div">
-
   <!-- Help Find API Create User -->
   <b><p>Create User</p></b>
-
   <label>User Email</label>
   <input id="create_user_email">
-
   <br>
-
   <label>User Password</label>
   <!-- Create User Session: Toggle Password Visibility -->
   <input type="password" name="password" autocomplete="current-password" required="" id="create_user_password">
   <i class="far fa-eye" id="togglePassword" onclick="create_user_password_function()" style="margin-left: -30px; cursor: pointer;"></i>
-
   <script>
     function create_user_password_function() {
       var x = document.getElementById("create_user_password");
@@ -27,39 +19,16 @@
         x.type = "password";
       }
     }
-
-  <br>
-  <!-- Create User Session: Toggle Password Visibility -->
-  <input type="password" id="create_user_password"><br><br>
-  <input type="checkbox" onclick="create_user_password_function()">Show Password
-
-  <script>
-  function create_user_password_function() {
-    var x = document.getElementById("create_user_password");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  }
-
   </script>
-
   <br>
   <br>
-
   <button id="create_user_button" type="button" a href="#" class="button">Create</button>
-
   <br>
-
   <!-- <b><p>Create User Status:</p></b> -->
   <div id="create_user_results_div">
     <br>
-
   </div>
-
   <br>
-
   <b>
     <%= link_to 'Logon', 'logon_session' %>
     <br>
