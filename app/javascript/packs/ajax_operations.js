@@ -113,6 +113,7 @@ function handle_ajax(event)
   const fbiApiWord = document.getElementById('fbi_api_word');
   const fbiApiButton = document.getElementById('fbi_api_button');
   const fbiCreateMissingNameButton = document.getElementById('fbi_create_missing_name_button')
+  const fbiMenu = document.getElementById('fbi_menu');
   //  Twitter API
   const twitterApiWord = document.getElementById('twitter_api_word');
   const twitterApiButton = document.getElementById('twitter_api_button');
@@ -663,16 +664,15 @@ function handle_ajax(event)
           var counter = 1
           var i = parseInt(fbiEntry) - 1
           let text = "<table>"
+          var fbiMenuWord = fbiMenu.value
 
           for (let x in fbiApiResponseData.items)
           {
-            if (fbiEntry === 'all')
+            if (fbiEntry || fbiMenuWord === 'all')
             {
-
               text += "<tr>";
               text += "<td>" +
               (counter ++) + "</td>";
-              // "<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>Add Data</a><div class='dropdown-menu sm-menu'><button id='fbi_create_missing_person_name_button' type='button' a href='# class='button'>Create New File</button></div>" + "</td>";
               text += "<td>" +
               fbiApiResponseData.items[x].title + "</td>";
               text += "<td>" +
@@ -694,39 +694,44 @@ function handle_ajax(event)
               text += "<td>" +
               fbiApiResponseData.items[x].person_classification + "</td></tr>";
             }
-            else if (fbiEntry === 'title')
+            else if (fbiEntry || fbiMenuWord === 'title')
             {
               text += "<tr>";
+              text += "<td></td>";              
               text += "<td>" +
               fbiApiResponseData.items[x].title + "</td></tr>";
             }
-            else if (fbiEntry === 'description')
+            else if (fbiEntry || fbiMenuWord === 'description')
             {
               text += "<tr>";
+              text += "<td></td>";
               text += "<td></td>";
               text += "<td>" +
               fbiApiResponseData.items[x].description + "</td></tr>";
             }
-            else if (fbiEntry === 'details')
+            else if (fbiEntry || fbiMenuWord === 'details')
             {
               text += "<tr>";
+              text += "<td></td>";
               text += "<td></td>";
               text += "<td></td>";
               text += "<td>" +
               fbiApiResponseData.items[x].details + "</td></tr>";
             }
-            else if (fbiEntry === 'sex')
+            else if (fbiEntry || fbiMenuWord === 'sex')
             {
               text += "<tr>";
+              text += "<td></td>";
               text += "<td></td>";
               text += "<td></td>";
               text += "<td></td>";
               text += "<td>" +
               fbiApiResponseData.items[x].sex + "</td></tr>";
             }
-            else if (fbiEntry === 'race')
+            else if (fbiEntry || fbiMenuWord === 'race')
             {
               text += "<tr>";
+              text += "<td></td>";
               text += "<td></td>";
               text += "<td></td>";
               text += "<td></td>";
@@ -734,7 +739,7 @@ function handle_ajax(event)
               text += "<td>" +
               fbiApiResponseData.items[x].race_raw + "</td></tr>";
             }
-            else if (fbiEntry === 'id')
+            else if (fbiEntry || fbiMenuWord === 'id')
             {
               text += "<tr>";
               text += "<td></td>";
@@ -746,7 +751,7 @@ function handle_ajax(event)
               text += "<td>" +
               fbiApiResponseData.items[x].uid + "</td></tr>";
             }
-            else if (fbiEntry === 'hair color')
+            else if (fbiEntry || fbiMenuWord === 'hair color')
             {
               text += "<tr>";
               text += "<td></td>";
@@ -759,7 +764,7 @@ function handle_ajax(event)
               text += "<td>" +
               fbiApiResponseData.items[x].hair_raw + "</td></tr>";
             }
-            else if (fbiEntry === 'weight')
+            else if (fbiEntry || fbiMenuWord === 'weight')
             {
               text += "<tr>";
               text += "<td></td>";
@@ -773,7 +778,7 @@ function handle_ajax(event)
               text += "<td>" +
               fbiApiResponseData.items[x].weight + "</td></tr>";
             }
-            else if (fbiEntry === 'url')
+            else if (fbiEntry || fbiMenuWord === 'url')
             {
               text += "<tr>";
               text += "<td></td>";
@@ -787,7 +792,7 @@ function handle_ajax(event)
               text += "<td></td>";              text += "<td>" +
               fbiApiResponseData.items[x].url + "</td></tr>";
             }
-            else if (fbiEntry === 'classification')
+            else if (fbiEntry || fbiMenuWord === 'classification')
             {
               text += "<tr>";
               text += "<td></td>";

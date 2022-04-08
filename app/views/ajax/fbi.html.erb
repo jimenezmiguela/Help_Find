@@ -1,45 +1,53 @@
 <h2>FBI Search</h2>
-
-<br>
 <br>
 <b>
-<div id='crud_operations_div'>
-  
-    <div class="field">
-    <b><label for="fbi_api_word">Choose a Search Option :</label></b>
-
-      <select name="fbi_api_word" id="fbi_api_word">
-        <option value="">--Please choose an option--</option>
-        <option value="all">All</option>
-        <option value="title">Title</option>
-        <option value="description">Description</option>
-        <option value="details">Details</option>
-        <option value="sex">Sex</option>
-        <option value="race">Race</option>
-        <option value="id">Id</option>
-        <option value="hair color">Hair color</option>
-        <option value="weight">Weight</option>
-        <option value="classification">Classification</option>
-        <option value="url">Url</option>
-      </select>
-  </div>
-
-  <button id="fbi_api_button" type="button">FBI results</button><br>
-
   <label>Valid Options</label>
 </b>
-   <br> <p>Column Sort: all, title, description, details, sex, race, id, hair color, weight, classification, url</p>
-   <br><p>Enter Row ID To Load Database</p>
+     <br> <i>Column Sort: all, title, description, details, sex, race, id, hair color, weight, classification, url</i>
+<div id='crud_operations_div'>
 
-  <input id="fbi_api_word">
-
-
-  <button id="fbi_api_button" type="button">Return results</button><br>
-
+   <br><i>Enter Row ID To Load Database</i><br>
+  <input id="fbi_api_word" type="number">
   <br>
-
+  <div class="field">
+    <select name="fbi" id="fbi_menu">
+      <option value="">--Please choose an option--</option>
+      <option value="all">All</option>
+      <option value="title">Title</option>
+      <option value="description">Description</option>
+      <option value="details">Details</option>
+      <option value="sex">Sex</option>
+      <option value="race">Race</option>
+      <option value="id">Id</option>
+      <option value="hair color">Hair color</option>
+      <option value="weight">Weight</option>
+      <option value="classification">Classification</option>
+      <option value="url">Url</option>
+    </select>
+</div>
+  <br>
+  <button id="fbi_api_button" type="button">Return results</button><br>
+  <br>
   <div class="container">
-  <label>FBI File Chosen For Database Input</label>
+    <label>File Entered Into Database</label>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Sex</th>
+        <th>Race</th>
+        <th>Age</th>
+        <th>Hair Color</th>
+        <th>Weight</th>
+      </tr>
+    </thead>
+    <tbody id="read_missing_person_results_div">
+    </tbody>
+  </table>
+  </div>
+  <div class="container">
+  <label>FBI Data returned</label>
   <table class="table">
     <thead>
       <tr>
@@ -61,102 +69,11 @@
   </table>
 </div>
 
-</div>
-
 <br>
-<br>
-<div class="container">
-  <label>File Entered Into Database</label>
-<table class="table">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Sex</th>
-      <th>Race</th>
-      <th>Age</th>
-      <th>Hair Color</th>
-      <th>Weight</th>
-    </tr>
-  </thead>
-  <tbody id="read_missing_person_results_div">
-  </tbody>
-</table>
-</div>
-
-<br>
-<!-- <b> -->
-<%= link_to "Home", "home" %>
-
-<br>
-
-<%= link_to 'Search Twitter', 'twitter' %>
-
-<br>
-
-<%= link_to 'Search Newsdata', 'newsdata' %>
-
-<br>
-
-<%= link_to 'Missing Files Center', 'missing_files' %>
-
-<br>
-
-<%= link_to 'Status Reports', 'status_reports' %>
-
-<br>
-
-<%= link_to 'Login/Logoff', 'session' %>
-
-<br>
-
-<%= link_to 'About', 'about' %>
-
-<br>
-<!-- </b> -->
-<%= javascript_pack_tag 'ajax_operations' %>
-      <tr>
-        <th>ID Row </th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Details</th>
-        <th>Sex</th>
-        <th>Race</th>
-        <th>FBI ID</th>
-        <th>Hair</th>
-        <th>Weight</th>
-        <th>URL</th>
-        <th>Classification</th>
-      </tr>
-    </thead>
-    <tbody id="fbi_results_div">
-    </tbody>
-  </table>
-</div>
 
 </div>
 
 <br>
-<br>
-<div class="container">
-  <label>File Entered Into Database</label>
-<table class="table">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Sex</th>
-      <th>Race</th>
-      <th>Age</th>
-      <th>Hair Color</th>
-      <th>Weight</th>
-    </tr>
-  </thead>
-  <tbody id="read_missing_person_results_div">
-  </tbody>
-</table>
-</div>
-
 <br>
 <!-- <b> -->
 <%= link_to "Home", "home" %>
