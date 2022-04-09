@@ -667,6 +667,10 @@ function handle_ajax(event)
           var fbiMenuWord = fbiMenu.value
 
           for (let x in fbiApiResponseData.items)
+            for (let s in fbiApiResponseData.items[x].subjects)
+              if (fbiApiResponseData.items[x].subjects[s] === 'Kidnappings and Missing Persons' ||
+                  fbiApiResponseData.items[x].subjects[s] === 'ViCAP Missing Persons' )
+          
           {
             if (fbiEntry || fbiMenuWord === 'all')
             {
