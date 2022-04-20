@@ -1,10 +1,8 @@
 function handle_ajax(event)
 {
   console.log('DOM fully loaded and parsed');
-
   // Headers
   const authHeader = localStorage.getItem("authHeader");
-
   // Missing People
   // CRUD MissingPerson Results Divs
   const createMissingPersonResultsDiv = document.getElementById('create_missing_person_results_div');
@@ -12,108 +10,59 @@ function handle_ajax(event)
   const updateMissingPersonResultsDiv = document.getElementById('update_missing_person_results_div');
   const deleteMissingPersonResultsDiv = document.getElementById('delete_missing_person_results_div');
   const crudOperationsDiv = document.getElementById('crud_operations_div');
-
     // Status Reports CRUD results divs
   const createStatusReportResultsDiv = document.getElementById('create_status_report_results_div');
   const readStatusReportResultsDiv = document.getElementById('read_status_report_results_div');
   const updateStatusReportResultsDiv = document.getElementById('update_status_report_results_div');
   const deleteStatusReportResultsDiv = document.getElementById('delete_status_report_results_div');
-  // API'S divs
-  // FBI
-  const fbiResultsDiv = document.getElementById('fbi_results_div');
-  // Newdata
-  const newsdataResultsDiv = document.getElementById('newsdata_results_div');
   // Missing People CRUD:
   // Create, Missing People
   const createName = document.getElementById('create_name');
-
   const createSex = document.getElementById('create_sex');
-
   const createRace = document.getElementById('create_race');
-
-  const createAge = document.
-  getElementById('create_age');
-
+  const createAge = document.getElementById('create_age');
   const createHairColor = document.getElementById('create_hair_color');
-
   const createWeight = document.getElementById('create_weight');
-
   const createMissingPersonButton = document.getElementById('create_missing_person_button');
-
   // Read, Missing People
   const readMissingPeopleButton = document.getElementById('read_missing_people_button');
-
   // Update, Missing People
   const updateMissingPersonId = document.getElementById('update_missing_person_id');
-
   const updateName = document.getElementById('update_name');
-
   const updateSex = document.getElementById('update_sex');
-
   const updateRace = document.getElementById('update_race');
-
   const updateAge = document.getElementById('update_age');
-
   const updateHairColor = document.getElementById('update_hair_color');
-
   const updateWeight = document.getElementById('update_weight');
-
   const updateMissingPersonButton = document.getElementById('update_missing_person_button');
-
   // Delete, Missing People
   const deleteMissingPersonId = document.getElementById('delete_missing_person_id');
-
   const deleteMissingPersonButton = document.getElementById('delete_missing_person_button');
-
   // Status Reports CRUD
-
   // Create, Status Reports
   const createIdMissingPersonStatusReport = document.getElementById('create_id_missing_person_status_report');
-
   const createOutsideAgencyId = document.getElementById('create_outside_agency_id');
-
   const createDescription = document.getElementById('create_description');
-
   const createDetails = document.getElementById('create_details');
-
   const createImageUrl = document.getElementById('create_image_url');
-
   const createStatusReportButton = document.getElementById('create_status_report_button');
-
   // Read, Status Reports
   const readStatusReportsMissingPersonId = document.getElementById('read_status_reports_missing_person_id');
-
   const readStatusReportsButton = document.getElementById('read_status_reports_button');
-
   // Update, Status Reports
   const updateStatusReportMissingPersonId = document.getElementById('update_status_report_missing_person_id');
-
   const updateStatusReportId = document.getElementById('update_status_report_id');
-
   const updateOutsideAgencyId = document.getElementById('update_outside_agency_id');
-
   const updateDescription = document.getElementById('update_description');
-
   const updateDetails = document.getElementById('update_details');
-
   const updateImageUrl = document.getElementById('update_image_url');
-
   const updateStatusReportButton = document.getElementById('update_status_report_button');
-
   // Delete, Status Reports
   const deleteStatusReportMissingPersonId = document.getElementById('delete_status_report_missing_person_id');
-
   const deleteStatusReportId = document.getElementById('delete_status_report_id');
-
   const deleteStatusReportButton = document.getElementById('delete_status_report_button');
-  // API'S
-  // Newsdata API
-  const newsdataApiWord = document.getElementById('newsdata_api_word');
-  const newsdataApiButton = document.getElementById('newsdata_api_button');
   // Paths
   const missingPeoplePath = 'http://localhost:3001/api/v1/missing_persons';
-  const newsdataPath = 'http://localhost:3001/api/v1/newsdata';
-
   // CRUD operations
   crudOperationsDiv.addEventListener('click', async (event) =>
   {
@@ -155,7 +104,6 @@ function handle_ajax(event)
           .then((createMissingPersonData) =>
           {
             console.log(createMissingPersonData);
-
             // HTML TABLE
             let text = "<table>"
             // for (let x in createMissingPersonData)
@@ -694,6 +642,22 @@ function handle_ajax(event)
           }
           text += "</table>"
           newsdataResultsDiv.innerHTML = text;
+
+
+          // JSON ONLY
+          // var word = newsdataApiWord.value
+          // if (word === 'title'){
+          //   var textData = newsdataApiResponseData.results[1].title;
+          // }
+          // else if (word === 'description'){
+          //   var textData = newsdataApiResponseData.results[1].description;
+          // }
+          // else if (word === 'link'){
+          //   var textData = newsdataApiResponseData.results[1].link;
+          // }
+          // var textDisplay = document.createElement('P');
+          // textDisplay.innerHTML = textData;
+          // newsdataResultsDiv.appendChild(textDisplay);
         }
       )// end .then
     } // end else if
