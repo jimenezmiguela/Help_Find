@@ -31,13 +31,18 @@ function handle_fbi_ajax(event)
           console.log(fbiApiResponseData);
           var fbiEntry = fbiApiWord.value
           var counter = 1
+          var index = 0
           var i = parseInt(fbiEntry) - 1
           let text = "<table>"
           var fbiMenuWord = fbiMenu.value
+          const fbiApiResponseArray = []
           for (let x in fbiApiResponseData.items)
           for (let s in fbiApiResponseData.items[x].subjects)
           if (fbiApiResponseData.items[x].subjects[s] === 'Kidnappings and Missing Persons' ||   fbiApiResponseData.items[x].subjects[s] === 'ViCAP Missing Persons' )
           {
+            fbiApiResponseArray[index] = fbiApiResponseData.items[x]
+            ++index
+            
             if (fbiEntry || fbiMenuWord === 'all')
             {
               text += "<tr>";
@@ -62,7 +67,9 @@ function handle_fbi_ajax(event)
               text += "<td>" +
               fbiApiResponseData.items[x].url + "</td>";
               text += "<td>" +
-              fbiApiResponseData.items[x].person_classification + "</td></tr>";
+              fbiApiResponseData.items[x].person_classification + "</td>";
+              text += "<td>" +
+              fbiApiResponseData.items[x].subjects[s] + "</td></tr>";
             }
             else if (fbiEntry || fbiMenuWord === 'title')
             {
@@ -187,35 +194,35 @@ function handle_fbi_ajax(event)
             text += "<td>" +
             fbiEntry + "</td>";
             text += "<td>" +
-            fbiApiResponseData.items[i].title + "</td>";
+            fbiApiResponseArray[i].title + "</td>";
             text += "<td>" +
-            fbiApiResponseData.items[i].description + "</td>";
+            fbiApiResponseArray[i].description + "</td>";
             text += "<td>" +
-            fbiApiResponseData.items[i].details + "</td>";
+            fbiApiResponseArray[i].details + "</td>";
             text += "<td>" +
-            fbiApiResponseData.items[i].sex + "</td>";
+            fbiApiResponseArray[i].sex + "</td>";
             text += "<td>" +
-            fbiApiResponseData.items[i].race_raw + "</td>";
+            fbiApiResponseArray[i].race_raw + "</td>";
             text += "<td>" +
-            fbiApiResponseData.items[i].uid + "</td>";
+            fbiApiResponseArray[i].uid + "</td>";
             text += "<td>" +
-            fbiApiResponseData.items[i].hair_raw + "</td>";
+            fbiApiResponseArray[i].hair_raw + "</td>";
             text += "<td>" +
-            fbiApiResponseData.items[i].weight + "</td>";
+            fbiApiResponseArray[i].weight + "</td>";
             text += "<td>" +
-            fbiApiResponseData.items[i].url + "</td>";
+            fbiApiResponseArray[i].url + "</td>";
             text += "<td>" +
-            fbiApiResponseData.items[i].person_classification + "</td></tr>";
+            fbiApiResponseArray[i].person_classification + "</td></tr>";
             // create missing person
             var createMissingPersonData =
             {
               missing_person:
               {
-                name: fbiApiResponseData.items[i].title,
-                sex: fbiApiResponseData.items[i].sex,
-                race: fbiApiResponseData.items[i].race_raw,
-                hair_color: fbiApiResponseData.items[i].hair_raw,
-                weight: fbiApiResponseData.items[i].weight
+                name: fbiApiResponseArray[i].title,
+                sex: fbiApiResponseArray[i].sex,
+                race: fbiApiResponseArray[i].race_raw,
+                hair_color: fbiApiResponseArray[i].hair_raw,
+                weight: fbiApiResponseArray[i].weight
               }
             }
             // HTTP Call
@@ -308,10 +315,10 @@ function handle_fbi_ajax(event)
                     {
                       status_report:
                       {
-                        case_id: fbiApiResponseData.items[i].uid,
-                        description: fbiApiResponseData.items[i].description,
-                        details: fbiApiResponseData.items[i].details,
-                        image_url: fbiApiResponseData.items[i].url
+                        case_id: fbiApiResponseArray.items[i].uid,
+                        description: fbiApiResponseArray.items[i].description,
+                        details: fbiApiResponseArray.items[i].details,
+                        image_url: fbiApiResponseArray.items[i].url
                       }
                     }
                     var fbiCreateIdMissingPersonStatusReport = listMissingPeopleData[(listMissingPeopleData.length)-1].id
