@@ -22,24 +22,25 @@
      <p class="my_alert"><%= flash[:alert] %></p>
    <% end %>
    <!-- Navbar -->
-   <nav class="navbar navbar-expand-sm   navbar-dark" style="background-color: #a4dded">
+   <nav class="navbar navbar-expand-sm   navbar-dark" style="background-color: #f7635e">
      <!-- Home -->
    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
      <li class="nav-item dropdown dmenu">
      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+      <i class="fa-solid fa-house"></i>
       Home
      </a>
      <div class="dropdown-menu sm-menu">
-       <%= link_to 'Home', '/ajax/home'  %>
-       <br>
        <%= link_to 'About', '/ajax/about' %>
+       <br>
+       <%= link_to "Home", "home" %>
       <br>
-       <%= link_to 'Login/Logoff', '/ajax/session' %>
      </div>
    </li>
 <!-- Search FBI -->
   <li class="nav-item dropdown dmenu">
   <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+    <i class="fa-solid fa-magnifying-glass-location"></i>
     Search FBI
   </a>
   <div class="dropdown-menu sm-menu">
@@ -53,10 +54,12 @@
 <!-- Search Twitter -->
   <li class="nav-item dropdown dmenu">
   <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+    <i class="fa-brands fa-twitter"></i>
     Search Twitter
   </a>
   <div class="dropdown-menu sm-menu">
-  <%= link_to 'Search Twitter', '/ajax/twitter' %>
+    <%= link_to 'Search Twitter', '/ajax/twitter' %>
+    <br>
     <%= link_to 'Missing People', '/ajax/missing_read' %>
     <br>
     <%= link_to 'Status Reports', '/ajax/status_reports_read' %>
@@ -65,10 +68,12 @@
 <!--Search Newsdata -->
   <li class="nav-item dropdown dmenu">
   <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+    <i class="fa-brands fa-searchengin"></i>
     Search Newsdata
   </a>
   <div class="dropdown-menu sm-menu">
-  <%= link_to 'Search Newsdata', '/ajax/newsdata' %>
+    <%= link_to 'Search Newsdata', '/ajax/newsdata' %>
+    <br>
     <%= link_to 'Missing People', '/ajax/missing_read' %>
     <br>
     <%= link_to 'Status Reports', '/ajax/status_reports_read' %>
@@ -77,7 +82,8 @@
 <!--Search Missing People -->
   <li class="nav-item dropdown dmenu">
   <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-    Missing People
+    <i class="fa-solid fa-person-circle-question"></i>
+    Missing People Database
   </a>
   <div class="dropdown-menu sm-menu">
 
@@ -100,6 +106,7 @@
 <!--Status Reports -->
   <li class="nav-item dropdown dmenu">
   <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+    <i class="fa-solid fa-file-signature"></i>
     Status Reports
   </a>
   <div class="dropdown-menu sm-menu">
@@ -118,30 +125,14 @@
 
     <%= link_to 'Delete File', '/ajax/status_reports_delete' %>
   </div>
-</li>
-<!--Search Login/Logout -->
-  <li class="nav-item dropdown dmenu">
-  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-    Login/Logout
-  </a>
-  <div class="dropdown-menu sm-menu">
-    <%= link_to 'Create User', '/ajax/create_session' %>
-     <br>
-    <%= link_to 'Logon', '/ajax/logon_session' %>
-     <br>
-    <%= link_to 'Logoff', '/ajax/logoff_session' %>
-  </div>
-</li>
+
 <!--Search About -->
   <li class="nav-item dropdown dmenu">
   <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-    About
+    <i class="fa-solid fa-right-to-bracket"></i>
+    Login/Logoff
   </a>
   <div class="dropdown-menu sm-menu">
-    <%= link_to 'About', '/ajax/about' %>
-    <br>
-    <%= link_to 'Home', '/ajax/home' %>
-    <br>
     <%= link_to 'Login/Logoff', '/ajax/session' %>
   </div>
 </li>
