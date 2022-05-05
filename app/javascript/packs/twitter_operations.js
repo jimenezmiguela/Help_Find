@@ -41,7 +41,12 @@ function handle_twitter_ajax(event)
           var twitterEntry = twitterApiWord.value
           let text = "<table>"
           for (let x in twitterApiResponseData.data)
-          if (twitterEntry === 'all')
+              if (twitterEntry === 'all')
+
+          //for (let x in twitterApiResponseData.items[x].subjects)
+              //if (twitterApiResponseData.items[x].subjects[s] === 'Kidnappings and Missing Persons' ||
+                  //twitterApiResponseData.items[x].subjects[s] === 'ViCAP Missing Persons' )
+
           {
             text += "<tr>";
             text += "<td>" +
