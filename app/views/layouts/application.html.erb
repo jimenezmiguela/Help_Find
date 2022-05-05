@@ -133,7 +133,14 @@
     Login/Logoff
   </a>
   <div class="dropdown-menu sm-menu">
-    <%= link_to 'Login/Logoff', '/ajax/session' %>
+    <i class="fa-solid fa-user-plus"></i>
+    <%= link_to 'Create User', '/ajax/create_session' %>
+    <br>
+    <div class="fa-solid fa-user-check"></div>
+    <%= link_to 'Logon', '/ajax/logon_session' %>
+    <br>
+    <div class="fa-solid fa-user-minus"></div>
+    <%= link_to 'Logoff', '/ajax/logoff_session' %>
   </div>
 </li>
 </ul>
