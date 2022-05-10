@@ -9,12 +9,14 @@ function handle_fbi_ajax(event)
   const fbiResultsDiv = document.getElementById('fbi_results_div');
   const fbiApiWord = document.getElementById('fbi_api_word');
   const fbiApiButton = document.getElementById('fbi_api_button');
-  const fbiCreateMissingNameButton = document.getElementById('fbi_create_missing_name_button')
+  const fbiCreateMissingNameButton = document.getElementById('fbi_create_missing_name_button');
   const fbiMenu = document.getElementById('fbi_menu');
   // Paths
   const missingPeoplePath = 'http://localhost:3001/api/v1/missing_persons';
   const fbiPath = 'http://localhost:3001/api/v1/fbi';
   // FBI operations
+  //const error = document.getElementById('fbi_error_create_duplicate_of_missing_person');
+  //error.textContent = 'Error';
   fbiOperationsDiv.addEventListener('click', async (event) =>
   {
     if (event.target === fbiApiButton)
@@ -80,20 +82,47 @@ function handle_fbi_ajax(event)
             }
             else if (fbiEntry || fbiMenuWord === 'description')
             {
+              if (fbiApiResponseData.items[x].description.length > 25) {
+                fbiApiResponseData.items[x].description = fbiApiResponseData.items[x].description.substring(0, 24) + "...";
+                
+                text += "<tr>";
+                text += "<td></td>";
+                text += "<td></td>";
+                text += "<td>" +
+                fbiApiResponseData.items[x].description + "</td></tr>";
+
+              }
+              else {    
               text += "<tr>";
               text += "<td></td>";
               text += "<td></td>";
               text += "<td>" +
               fbiApiResponseData.items[x].description + "</td></tr>";
+              }
+          
+
             }
             else if (fbiEntry || fbiMenuWord === 'details')
             {
+              if (fbiApiResponseData.items[x].details.length > 25) {
+                fbiApiResponseData.items[x].details = fbiApiResponseData.items[x].details.substring(0, 24) + "...";
+
               text += "<tr>";
               text += "<td></td>";
               text += "<td></td>";
               text += "<td></td>";
               text += "<td>" +
               fbiApiResponseData.items[x].details + "</td></tr>";
+              }
+              else
+              {
+                text += "<tr>";
+                text += "<td></td>";
+                text += "<td></td>";
+                text += "<td></td>";
+                text += "<td>" +
+                fbiApiResponseData.items[x].details + "</td></tr>";
+              }
             }
             else if (fbiEntry || fbiMenuWord === 'sex')
             {
@@ -189,7 +218,7 @@ function handle_fbi_ajax(event)
           // number entry
           if (parseInt(fbiEntry))
           {
-            // display choosen fbi id
+            // display chosen fbi id
             text += "<tr>";
             text += "<td>" +
             fbiEntry + "</td>";
@@ -254,7 +283,10 @@ function handle_fbi_ajax(event)
                 createMissingPersonResponse.json()
                 .then((createMissingPersonData) =>
                 {
-                  alert(`Return code ${createMissingPersonResponse.status} ${createMissingPersonResponse.statusText}`);
+                  //alert(`Return code ${createMissingPersonResponse.status} ${createMissingPersonResponse.statusText}`);
+                  alert(`Can not create new missing person, a person with the same name is already exists`);
+                  //error.textContent = "Can not create new missing person, a person with the same name is already exists"
+                  //error.style.color = "red"
                 })
                 .catch((createMissingPersonError) =>
                 {
