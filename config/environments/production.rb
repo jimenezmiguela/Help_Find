@@ -7,12 +7,12 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
 
-  #Rails.application.config.middleware.use ExceptionNotification::Rack,
-    #email: {
-      #email_prefix: '[PREFIX] ',
-      #sender_address: %{"help-find error" <support@help-find.herokuapp.com>},
-      #exception_recipients: %w{inlibra@gmail.com, oleg.kolyaka@gmail.com, jimenezmiguela@yahoo.com}
-    #}
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+    email: {
+      email_prefix: '[PREFIX] ',
+      sender_address: %{"help-find error" <support@help-find.herokuapp.com>},
+      exception_recipients: %w{inlibra@gmail.com, oleg.kolyaka@gmail.com, jimenezmiguela@yahoo.com}
+    }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
