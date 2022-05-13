@@ -12,8 +12,8 @@ function handle_fbi_ajax(event)
   const fbiCreateMissingNameButton = document.getElementById('fbi_create_missing_name_button')
   const fbiMenu = document.getElementById('fbi_menu');
   // Paths
-  const missingPeoplePath = 'http://localhost:3001/api/v1/missing_persons';
-  const fbiPath = 'http://localhost:3001/api/v1/fbi';
+  const missingPeoplePath = 'https://help-find-back.herokuapp.com/api/v1/missing_persons';
+  const fbiPath = 'https://help-find-back.herokuapp.com/api/v1/fbi';
   // FBI operations
   fbiOperationsDiv.addEventListener('click', async (event) =>
   {
