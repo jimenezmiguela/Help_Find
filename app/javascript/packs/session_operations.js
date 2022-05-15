@@ -3,7 +3,7 @@ function handle_session (event) {
   console.log('DOM fully loaded and parsed');
 
   // Backend API controller path
-  const usersHelpFindBackPath = 'http://localhost:3001/users';
+  const usersHelpFindBackPath = 'https://help-find-back.herokuapp.com/users';
 
   // session rest operations
   const sessionRestOperationsDiv = document.getElementById('session_rest_operations_div');

@@ -12,8 +12,8 @@ function handle_twitter_ajax(event)
   const twitterCreateMissingNameButton = document.getElementById('twitter_create_missing_name_button')
   const twitterMenu = document.getElementById('twitter_menu');
   // Paths
-  const missingPeoplePath = 'http://localhost:3001/api/v1/missing_persons';
-  const twitterPath = 'http://localhost:3001/api/v1/twitter';
+  const missingPeoplePath = 'https://help-find-back.herokuapp.com/api/v1/missing_persons';
+  const twitterPath = 'https://help-find-back.herokuapp.com/api/v1/twitter';
   // Twitter operations
   twitterOperationsDiv.addEventListener('click', async (event) =>
   {
