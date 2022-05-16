@@ -13,7 +13,9 @@ function handle_newsdata_ajax(event)
   const newsdataMenu = document.getElementById('newsdata_menu');
   // Paths
   // const missingPeoplePath = 'https://help-find-back.herokuapp.com/api/v1/missing_persons';
-  const newsdataPath = 'https://help-find-back.herokuapp.com/api/v1/newsdata';
+  //const newsdataPath = 'https://help-find-back.herokuapp.com/api/v1/newsdata';
+  const missingPeoplePath = 'http://localhost:3001/api/v1/missing_persons';
+  const newsdataPath = 'http://localhost:3001/api/v1/newsdata';
   // Twitter operations
   newsdataOperationsDiv.addEventListener('click', async (event) =>
   {
