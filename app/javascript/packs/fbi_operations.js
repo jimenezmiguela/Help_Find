@@ -15,8 +15,6 @@ function handle_fbi_ajax(event)
   const missingPeoplePath = 'http://localhost:3001/api/v1/missing_persons';
   const fbiPath = 'http://localhost:3001/api/v1/fbi';
   // FBI operations
-  //const error = document.getElementById('fbi_error_create_duplicate_of_missing_person');
-  //error.textContent = 'Error';
   fbiOperationsDiv.addEventListener('click', async (event) =>
   {
     if (event.target === fbiApiButton)
@@ -284,9 +282,7 @@ function handle_fbi_ajax(event)
                 .then((createMissingPersonData) =>
                 {
                   //alert(`Return code ${createMissingPersonResponse.status} ${createMissingPersonResponse.statusText}`);
-                  alert(`Can not create new missing person, a person with the same name is already exists`);
-                  //error.textContent = "Can not create new missing person, a person with the same name is already exists"
-                  //error.style.color = "red"
+                  alert(`Could not create a new missing person, a person with the same name is already exists`);
                 })
                 .catch((createMissingPersonError) =>
                 {
