@@ -11,11 +11,13 @@ function handle_twitter_ajax(event)
   const twitterApiButton = document.getElementById('twitter_api_button');
   const twitterCreateMissingNameButton = document.getElementById('twitter_create_missing_name_button')
   const twitterMenu = document.getElementById('twitter_menu');
+  const body = document.getElementById('body');
+  const backend = body.getAttribute('data-backend');
   // Paths
   //const missingPeoplePath = 'https://help-find-back.herokuapp.com/api/v1/missing_persons';
-  const missingPeoplePath = 'http://localhost:3001/api/v1/missing_persons';
+  const missingPeoplePath = backend + "/api/v1/missing_persons";
   //const twitterPath = 'https://help-find-back.herokuapp.com/api/v1/twitter';
-  const twitterPath = 'http://localhost:3001/api/v1/twitter';
+  const twitterPath = backend + "/api/v1/twitter";
   // Twitter operations
   twitterOperationsDiv.addEventListener('click', async (event) =>
   {

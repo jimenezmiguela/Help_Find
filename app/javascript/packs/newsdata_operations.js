@@ -11,11 +11,14 @@ function handle_newsdata_ajax(event)
   const newsdataApiButton = document.getElementById('newsdata_api_button');
   const newsdataCreateMissingNameButton = document.getElementById('newsdata_create_missing_name_button')
   const newsdataMenu = document.getElementById('newsdata_menu');
+  const body = document.getElementById('body');
+  const backend = body.getAttribute('data-backend');
+
   // Paths
   // const missingPeoplePath = 'https://help-find-back.herokuapp.com/api/v1/missing_persons';
   //const newsdataPath = 'https://help-find-back.herokuapp.com/api/v1/newsdata';
-  const missingPeoplePath = 'http://localhost:3001/api/v1/missing_persons';
-  const newsdataPath = 'http://localhost:3001/api/v1/newsdata';
+  const missingPeoplePath = backend + "/api/v1/missing_persons";
+  const newsdataPath = backend + "/api/v1/newsdata";
   // Twitter operations
   newsdataOperationsDiv.addEventListener('click', async (event) =>
   {
