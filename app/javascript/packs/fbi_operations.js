@@ -11,11 +11,14 @@ function handle_fbi_ajax(event)
   const fbiApiButton = document.getElementById('fbi_api_button');
   const fbiCreateMissingNameButton = document.getElementById('fbi_create_missing_name_button');
   const fbiMenu = document.getElementById('fbi_menu');
+  const body = document.getElementById('body');
+  const backend = body.getAttribute('data-backend');
   // Paths
   //const missingPeoplePath = 'https://help-find-back.herokuapp.com/api/v1/missing_persons';
   //const fbiPath = 'https://help-find-back.herokuapp.com/api/v1/fbi';
-  const missingPeoplePath = 'http://localhost:3001/api/v1/missing_persons';
-  const fbiPath = 'http://localhost:3001/api/v1/fbi';
+  const missingPeoplePath = backend + "/api/v1/missing_persons";
+  const fbiPath = backend + "/api/v1/fbi";
+
   // FBI operations
   fbiOperationsDiv.addEventListener('click', async (event) =>
   {
@@ -44,7 +47,7 @@ function handle_fbi_ajax(event)
           {
             fbiApiResponseArray[index] = fbiApiResponseData.items[x]
             ++index
-            
+
             if (fbiEntry || fbiMenuWord === 'all')
             {
               text += "<tr>";
@@ -84,7 +87,7 @@ function handle_fbi_ajax(event)
             {
               if (fbiApiResponseData.items[x].description.length > 25) {
                 fbiApiResponseData.items[x].description = fbiApiResponseData.items[x].description.substring(0, 24) + "...";
-                
+
                 text += "<tr>";
                 text += "<td></td>";
                 text += "<td></td>";
@@ -92,14 +95,14 @@ function handle_fbi_ajax(event)
                 fbiApiResponseData.items[x].description + "</td></tr>";
 
               }
-              else {    
+              else {
               text += "<tr>";
               text += "<td></td>";
               text += "<td></td>";
               text += "<td>" +
               fbiApiResponseData.items[x].description + "</td></tr>";
               }
-          
+
 
             }
             else if (fbiEntry || fbiMenuWord === 'details')

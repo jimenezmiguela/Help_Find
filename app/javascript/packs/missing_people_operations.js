@@ -33,9 +33,12 @@ function handle_missing_people_ajax(event)
   // Delete, Missing People
   const deleteMissingPersonId = document.getElementById('delete_missing_person_id');
   const deleteMissingPersonButton = document.getElementById('delete_missing_person_button');
+  const body = document.getElementById('body');
+  const backend = body.getAttribute('data-backend');
   // // Paths
   //const missingPeoplePath = 'https://help-find-back.herokuapp.com/api/v1/missing_persons';
-  const missingPeoplePath = 'http://localhost:3001/api/v1/missing_persons';
+  const missingPeoplePath = backend + "/api/v1/missing_persons";
+
   // CRUD operations
   missingPeopleCrudOperationsDiv.addEventListener('click', async (event) =>
   {

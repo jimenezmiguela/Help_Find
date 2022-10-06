@@ -32,9 +32,11 @@ function handle_status_reports_ajax(event)
   const deleteStatusReportMissingPersonId = document.getElementById('delete_status_report_missing_person_id');
   const deleteStatusReportId = document.getElementById('delete_status_report_id');
   const deleteStatusReportButton = document.getElementById('delete_status_report_button');
+  const body = document.getElementById('body');
+  const backend = body.getAttribute('data-backend');
   // Paths
   //const missingPeoplePath = 'https://help-find-back.herokuapp.com/api/v1/missing_persons';
-  const missingPeoplePath = 'http://localhost:3001/api/v1/missing_persons';
+  const missingPeoplePath = backend + "/api/v1/missing_persons";
   // CRUD operations
   statusReportsCrudOperationsDiv.addEventListener('click', async (event) =>
   {
